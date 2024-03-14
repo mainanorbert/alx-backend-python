@@ -1,7 +1,7 @@
-#!usr/bin/env python3
-"""Module for Basic annotations - add"""
+#!/usr/bin/env python3
+''' module for addition method '''
 
 
 def add(a: float, b: float) -> float:
-    """ add: adding two numbers"""
+    ''' function to add two float numbers '''
     return (a + b)
