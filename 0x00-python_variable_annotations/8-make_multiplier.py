@@ -6,11 +6,11 @@ from typing import Callable
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """
-    function taking float argument and returns a 
+    function taking float argument and returns a
     function that multiplies two floats
     """
     def inner(n: float) -> float:
         """function used for mult."""
-        return n * multiplier;
+        return n * multiplier
 
-    return inner;
+    return inner
