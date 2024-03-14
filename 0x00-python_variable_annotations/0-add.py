@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-''' module for addition method '''
+''' python module for adding method '''
 
 
 def add(a: float, b: float) -> float:
-    ''' function to add two float numbers '''
+    ''' apython function that adds two float numbers and returns a float '''
     return (a + b)
