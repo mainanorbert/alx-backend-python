@@ -4,7 +4,7 @@
 from typing import Optional, Any
 
 
-def safe_first_element(lst: list) -> Optional[Any]:
+def safe_first_element(lst: List[Any]) -> Any:
     """Returns the first element of a list, or None if the list is empty."""
     if lst:
         return lst[0]
