@@ -18,8 +18,8 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(access_nested_map(data, path), result)
 
     @parameterized.expand([
-        ({}, ["a"], "Key 'a' not found"),
-        ({"a": 1}, ["a", "b"], "Key 'b' not found")
+        ({}, ["a"], KeyError),
+        ({"a": 1}, ["a", "b"], KeyError)
         ])
     def test_access_nested_map(self, data, path, err_message):
         """Parameterize a unit test"""
