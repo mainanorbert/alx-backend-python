@@ -5,6 +5,7 @@ import unittest
 from unittest.mock import patch, Mock
 from parameterized import parameterized
 from utils import access_nested_map, get_json, memoize
+from typing import Mapping, Sequence, Dict, Tuple, Any
 
 
 class TestAccessNestedMap(unittest.TestCase):
@@ -14,7 +15,8 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": {"b": 2}}, ["a"], {"b": 2}),
         ({"a": {"b": 2}}, ["a", "b"], 2)
         ])
-    def test_access_nested_map(self, data, path, result):
+    def test_access_nested_map(self, data: Mapping[str, Any],
+                               path: Sequence, result: Any) -> None:
         """testing_access_nested_map functin"""
         self.assertEqual(access_nested_map(data, path), result)
 
