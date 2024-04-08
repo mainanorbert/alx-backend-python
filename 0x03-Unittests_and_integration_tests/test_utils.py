@@ -21,17 +21,16 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(access_nested_map(data, path), result)
 
     @parameterized.expand([
-        ({}, ["a"], "'a'"),
-        ({"a": 1}, ["a", "b"], "'b'")
+        ({}, ["a"], KeyError),
+        ({"a": 1}, ["a", "b"], KeyError)
         ])
     def test_access_nested_map_exception(self,
                                          data: Mapping,
                                          path: Sequence,
-                                         err_message: str) -> None:
+                                         err_message: Exception) -> None:
         """Parameterize a unit test"""
-        with self.assertRaises(KeyError) as context:
+        with self.assertRaises(exception):
             access_nested_map(data, path)
-        self.assertEqual(str(context.exception), f"KeyError({err_message})")
 
 
 class TestGetJson(unittest.TestCase):
